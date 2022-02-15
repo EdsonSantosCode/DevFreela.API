@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Application.Services.Implementations
 {
-    internal class ProjectService : IProjectService
+    public class ProjectService : IProjectService
     {
         private readonly DevFreelaDbContext _dbContext;
 

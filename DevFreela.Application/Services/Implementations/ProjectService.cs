@@ -51,7 +51,7 @@ namespace DevFreela.Application.Services.Implementations
             project.Finish();
         }
 
-        public List<ProjectViewModel> GetAll()
+        public List<ProjectViewModel> GetAll(string query)
         {
             var project = _dbContext.Projects;
 
@@ -65,6 +65,9 @@ namespace DevFreela.Application.Services.Implementations
         public ProjectDetailsViewModel GetById(int id)
         {
             var project = _dbContext.Projects.FirstOrDefault(p => id == p.Id);
+
+            if(project == null)
+                return null;
 
             var projectDetailsViewModel = new ProjectDetailsViewModel(
                     project.Id,

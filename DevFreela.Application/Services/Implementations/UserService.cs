@@ -33,7 +33,8 @@ namespace DevFreela.Application.Services.Implementations
         {
             var user = _dbContext.Users.FirstOrDefault(u => u.Id == id);
 
-            if(user == null) return null;
+            if(user == null) 
+                return null;
 
 
             return new UserViewModel(user.FullName, user.Email);

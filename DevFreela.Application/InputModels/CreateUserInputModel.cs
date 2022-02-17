@@ -8,9 +8,9 @@ namespace DevFreela.Application.InputModels
 {
     public class CreateUserInputModel
     {
-        public string FullName { get; private set; }
-        public string Email { get; private set; }
-        public string PassWord { get; private set; }
-        public DateTime BirthDate { get; private set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string PassWord { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }

@@ -21,8 +21,16 @@ namespace DevFreela.Infrastructure.Percistence
                 .HasKey(p => p.Id);
 
             modelBuilder.Entity<Project>()
+                .HasOne(p => p.Freelancer)
+                .WithMany(p => p.FreelanceProjects)
+                .HasForeignKey(p => p.IdFreelancer)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Project>()
                 .HasOne(p => p.Client)
-                .WithMany();
+                .WithMany(p => p.OwnedProjects)
+                .HasForeignKey(p => p.IdClient)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<User>()
                 .HasKey(u => u.Id);
